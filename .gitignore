@@ -1,0 +1,6 @@
+.directory
+.orig
+node_modules/
+build/
+dev/
+vendor/

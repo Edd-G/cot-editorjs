@@ -1,0 +1,4 @@
+/* Hide default editor textarea */
+.editor {
+	display: none;
+}

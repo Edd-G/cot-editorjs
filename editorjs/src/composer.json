@@ -1,0 +1,12 @@
+{
+    "require": {
+        "edd-g/editorjs-simple-html-parser": "dev-master",
+        "codex-team/editor.js": "dev-master"
+    },
+    "repositories": [
+            {
+                "type": "vcs",
+                "url": "https://github.com/edd-g/editorjs-simple-html-parser.git"
+            }
+    ]
+}

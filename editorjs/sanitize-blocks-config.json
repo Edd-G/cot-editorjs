@@ -1,0 +1,122 @@
+{
+  "tools": {
+    "header": {
+      "text": {
+        "type": "string",
+        "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+      },
+      "level": [1, 2, 3, 4, 5, 6],
+      "alignment": ["left", "right", "center", "justify"]
+    },
+    "paragraph": {
+      "text": {
+        "type": "string",
+        "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+      },
+      "alignment": ["left", "right", "center", "justify"]
+    },
+    "list": {
+      "style": ["ordered", "unordered"],
+      "items": {
+        "type": "array",
+        "data": {
+          "-": {
+            "type": "string",
+            "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+          }
+        }
+      }
+    },
+    "quote": {
+      "text": {
+        "type": "string",
+        "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+      },
+      "caption": {
+        "type": "string",
+        "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+      },
+      "alignment": ["left", "center"]
+    },
+    "delimiter" : {
+    },
+    "code" : {
+      "code" : "string"
+    },
+    "raw" : {
+      "html" : {
+        "type" : "string",
+        "allowedTags": "*"
+      }
+    },
+    "linkTool" :  {
+      "link": "string",
+      "meta": {
+        "type": "array",
+        "data": {
+          "site_name": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "image": {
+            "type": "array",
+            "data": {
+              "url": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "image": {
+      "url": "string",
+      "caption": {
+        "type": "string",
+        "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+      },
+      "withBorder": "bool",
+      "withBackground": "bool",
+      "stretched": "bool"
+    },
+    "embed": {
+      "service": "string",
+      "source": "string",
+      "embed": "string",
+      "width": "integer",
+      "height": "integer",
+      "caption": "string"
+    },
+    "table": {
+      "withHeadings": "bool",
+      "content": {
+        "type": "array",
+        "data": {
+          "-": {
+            "type": "array",
+            "data": {
+              "-": {
+                "type": "string",
+                "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+              }
+            }
+          }
+        }
+      }
+    },
+    "alert": {
+      "type": ["primary", "secondary", "info", "success", "warning", "danger", "light", "dark"],
+      "align": ["left", "center", "right"],
+      "message": "string"
+    },
+    "warning": {
+      "title": "string",
+      "message": "string"
+    }
+  }
+}
