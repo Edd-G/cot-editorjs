@@ -37,5 +37,139 @@ Package | Key | Main CSS Class<br>(with default prefix) | Additional / modificat
 ## Configuration
 1. You can turn off unnecessary tools in `editorjs.editor.php`
 2. Set sanitize data from client with HTML Purifier rules in `sanitize-blocks-config.json`
+3. Set custom prefix (default is `prs`) for generated classes in plugin configuration
 
 For more information on cleaning rules, see: https://github.com/editor-js/editorjs-php
+
+## Generated HTML
+
+### Header
+
+```html
+<h2 class="prs-header prs_center">Lorem</h2>
+```
+
+### Paragraph
+
+```html
+<p class="prs-paragraph prs_center">
+    <code class="inline-code">Pellentesque</code> 
+    <i>malesuada fames</i> 
+    <mark class="cdx-marker">tempus</mark>
+</p>
+```
+
+### Ordered List
+
+```html
+<ol class="prs-list prs_ordered">
+    <li></li>
+</ol>
+```
+
+### Unordered List
+
+```html
+<ul class="prs-list">
+    <li></li>
+</ul>
+```
+
+### Table
+
+```html
+<table class="prs-table prs_withheadings">
+    <thead>
+        <tr>
+            <th>1</th><th>2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>a</td><td>b</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+### Code
+
+```html
+<pre class="prs-code">
+    <code></code>
+</pre>
+```
+
+### Embed 
+###### *(Actually working with Youtube)*
+
+```html
+<figure class="prs-embed prs_youtube">
+    <iframe width="580" height="320" src="https://www.youtube.com/embed/CwXOrWvPBPk" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+    <figcaption>Shrek (2001) Trailer</figcaption>
+</figure>
+```
+
+### Delimiter
+
+```html
+<hr class="prs-delimiter">
+```
+
+### LinkTool
+
+```html
+<figure class="prs-linkTool">
+    <a href="https://github.com/" target="_blank">
+       <img src="https://example.com/cat.png" alt="">
+       <p class="prs_title">Title</p>
+       <p class="prs_description">Description</p>
+       <p class="prs_sitename">example.com</p>
+    </a>
+</figure>
+```
+
+### Image
+
+```html
+<figure class="prs-image prs_withborder prs_withbackground prs_stretched">
+    <img src="" alt="">
+    <figcaption></figcaption>
+</figure>
+```
+
+### Quote
+
+```html
+<figure class="prs-quote prs_center">
+    <blockquote></blockquote>
+    <figcaption></figcaption>
+</figure>
+```
+
+### Warning
+
+```html
+<div class="prs-warning">
+    <i></i>
+    <h4>Title</h4>
+    <p>Message</p>
+</div>
+```
+
+### Alert
+
+```html
+<p class="prs-alert prs_center prs_success">
+    Alert!
+</p>
+```
+
+### Raw
+
+```html
+<div class="prs-raw">
+    Raw HTML ...
+</div>
+```
+For more information about parser, see: [https://github.com/editor-js/editorjs-php](https://github.com/Edd-G/editorjs-simple-html-parser)
