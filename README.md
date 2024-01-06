@@ -3,7 +3,7 @@ Editor.js plugin for Cotonti CMF - Modern block-style editor
 
 Content editor and 2 way parser plugin:
 - from Editor.js blocks to HTML
-- frof HTML to Editor.js blocks
+- from HTML to Editor.js blocks
 
 Plugin markups created HTML content with special classes.
 This classes described in table.
