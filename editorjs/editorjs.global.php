@@ -37,14 +37,16 @@ function editorjs_parse_html($html)
  */
 function editorjs_filter($data)
 {
-	if (Cot::$sys['parser'] == 'editorjs')
+	if (Cot::$sys['parser'] == 'editorjs' && !empty($data))
 	{
-		return ejs_parse_blocks(ejs_sanitize($data));
-	}
-	else
-	{
+		json_decode($data);
+		if (json_last_error() === JSON_ERROR_NONE)
+		{
+			return ejs_parse_blocks(ejs_sanitize($data));
+		}
 		return $data;
 	}
+	return $data;
 }
 
 $cot_import_filters['HTM'][] = 'editorjs_filter';

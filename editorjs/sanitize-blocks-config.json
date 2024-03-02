@@ -5,15 +5,13 @@
         "type": "string",
         "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
       },
-      "level": [1, 2, 3, 4, 5, 6],
-      "alignment": ["left", "right", "center", "justify"]
+      "level": [2, 3, 4]
     },
     "paragraph": {
       "text": {
         "type": "string",
         "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
-      },
-      "alignment": ["left", "right", "center", "justify"]
+      }
     },
     "list": {
       "style": ["ordered", "unordered"],

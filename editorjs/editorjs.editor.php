@@ -22,8 +22,8 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
     // Editor.js styles
     Resources::addFile($cfg['plugins_dir'].'/editorjs/css/editorjs.css', 'css', 10);
     // Loading Editor.js plugins
-    Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/editorjs-header-with-alignment@latest', 'js', 90);
-    Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/editorjs-paragraph-with-alignment@latest', 'js', 90);
+    Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/@editorjs/header@latest', 'js', 90);
+    Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/@editorjs/paragraph@latest', 'js', 90);
     Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/@editorjs/list@latest', 'js', 90);
     Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/@editorjs/raw', 'js', 90);
     Resources::linkFileFooter('https://cdn.jsdelivr.net/npm/@editorjs/simple-image@latest', 'js', 90);
@@ -45,7 +45,7 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
     // Init Editor.js
     // Resources::linkFileFooter($cfg['plugins_dir'].'/editorjs/js/editorjs.js', 'js', 100);
 
-    $editor_data = ejs_parse_html($pag['page_text']) ? ejs_parse_html($pag['page_text']) : '[]';
+    $editor_data = ejs_parse_html(isset($pag['page_text'])) ? ejs_parse_html($pag['page_text']) : '{}';
 
     Resources::addEmbed('
         const data = '.$editor_data.',
@@ -174,21 +174,19 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
             tools: {
                 header: {
                     class: Header,
-                    inlineToolbar: true,
+                    // inlineToolbar: true,
                     config: {
-                        levels: [1, 2, 3, 4],
-                        defaultLevel: 1,
-                        defaultAlignment: "left",
+                        levels: [2, 3, 4],
+                        defaultLevel: 2,
+                        // defaultAlignment: "left",
                         placeholder: "Header"
                     }
                 },
                 paragraph: {
                     class: Paragraph,
                     inlineToolbar: true,
-                    logLevel: "WARN",
-                    config: {
-                        placeholder: "Enter something"
-                    }
+                    // logLevel: "WARN",
+                    placeholder: "Enter something"
                 },
                 list: List,
                 raw: RawTool,
@@ -250,7 +248,7 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
              */
             data: data,
             onReady: async () => {
-                if (data.length === 0) {
+                if (data.blocks && data.blocks.length === 0) {
                     await editor.blocks.renderFromHTML(document.getElementById("editorjsdata").value);
                 }
             },

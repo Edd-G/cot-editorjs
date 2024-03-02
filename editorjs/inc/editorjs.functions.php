@@ -42,7 +42,7 @@ function ejs_sanitize($data)
         return json_encode($editorBlocks, JSON_UNESCAPED_UNICODE|JSON_UNESCAPED_SLASHES);
 
     } catch (EditorJSException $e) {
-        cot_error('Editor.js: ' . $e->getMessage(), 'ejs_sanitize');
+        cot_error('Editor.js (sanitize blocks): ' . $e->getMessage(), 'ejs_sanitize');
     }
 }
 
@@ -67,7 +67,7 @@ function ejs_parse_blocks($data)
             return $html;
 
         } catch (ParserException $e) {
-            cot_error('Editor.js: ' . $e->getMessage(), 'ejs_parse_blocks');
+            cot_error('Editor.js (parse blocks): ' . $e->getMessage(), 'ejs_parse_blocks');
         }
     }
 }
