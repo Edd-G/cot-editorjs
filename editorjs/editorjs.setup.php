@@ -4,12 +4,12 @@
 Code=editorjs
 Name=Editor.js
 Category=editor-parser
-Description=Modern look, customizable block-style editor. <a href="https://github.com/codex-team/editor.js">https://github.com/codex-team/editor.js<a/>
+Description=Modern look, customizable block-style editor.
 Version=1.0.0
 Date=2024-01-02
 Author=Cotonti Team, Codex Team, Edward Gabishev
 Copyright=&copy; Cotonti Team 2008-2024
-Notes=
+Notes=<a href="https://github.com/codex-team/editor.js">https://github.com/codex-team/editor.js<a/>
 Auth_guests=RW
 Lock_guests=12345A
 Auth_members=RW
