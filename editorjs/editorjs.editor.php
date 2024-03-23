@@ -48,7 +48,7 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
     $editor_data = ejs_parse_html(isset($pag['page_text'])) ? ejs_parse_html($pag['page_text']) : '{}';
 
     Resources::addEmbed('
-        const data = '.$editor_data.',
+        const dataJson = '.$editor_data.',
             i18n = {
             direction: "'.$L['i18n_direction'].'",
             messages: {
@@ -246,16 +246,26 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
             /**
              * Previously saved data that should be rendered
              */
-            data: data,
+            data: dataJson,
             onReady: async () => {
-                if (data.blocks && data.blocks.length === 0) {
-                    await editor.blocks.renderFromHTML(document.getElementById("editorjsdata").value);
+                if (Object.keys(dataJson).length === 0) {
+                    await setData();
                 }
             },
             onChange: function(api, event) {
                 // console.log("something changed", event);
             }
         });
+
+        const setData = function() {
+            let dataValue = document.getElementById("editorjsdata").value;
+            try {
+                editor.blocks.render(JSON.parse(dataValue));
+            } catch (e) {
+                editor.blocks.renderFromHTML(dataValue);
+            }
+        };
+
         const saveButtons = document.getElementsByName("rpagestate");
         if (saveButtons) {
             saveButtons.forEach(function(el) {
