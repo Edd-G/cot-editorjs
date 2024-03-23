@@ -259,10 +259,12 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
 
         const setData = function() {
             let dataValue = document.getElementById("editorjsdata").value;
-            try {
-                editor.blocks.render(JSON.parse(dataValue));
-            } catch (e) {
-                editor.blocks.renderFromHTML(dataValue);
+            if(dataValue) {
+                try {
+                    editor.blocks.render(JSON.parse(dataValue));
+                } catch (e) {
+                    editor.blocks.renderFromHTML(dataValue);
+                }
             }
         };
 
