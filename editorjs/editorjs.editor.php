@@ -248,7 +248,7 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
              */
             data: dataJson,
             onReady: async () => {
-                if (Object.keys(dataJson).length === 0) {
+                if (Object.keys(dataJson).length === 0 || (dataJson.blocks && dataJson.blocks.length === 0)) {
                     await setData();
                 }
             },

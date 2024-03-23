@@ -37,7 +37,7 @@ function editorjs_parse_html($html)
  */
 function editorjs_filter($data)
 {
-	if (Cot::$sys['parser'] == 'editorjs' && !empty($data))
+	if (Cot::$sys['parser'] == 'editorjs' && !empty($data) && !is_numeric($data))
 	{
 		json_decode($data);
 		if (json_last_error() === JSON_ERROR_NONE)
