@@ -212,7 +212,14 @@ if ($env['ext'] == 'page' && cot::$usr['id'] > 0)
                 inlineCode: InlineCode,
                 Marker: Marker,
                 underline: Underline,
-                alert: Alert,
+                alert: {
+                    class: Alert,
+                    inlineToolbar: true,
+                    config: {
+                        defaultType: "primary",
+                        messagePlaceholder: "Enter something",
+                    },
+                },
                 warning: {
                     class: Warning,
                     config: {

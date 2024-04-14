@@ -110,7 +110,10 @@
     "alert": {
       "type": ["primary", "secondary", "info", "success", "warning", "danger", "light", "dark"],
       "align": ["left", "center", "right"],
-      "message": "string"
+      "message": {
+        "type": "string",
+        "allowedTags": "i,b,a[href],code[class],mark[class],u[class]"
+      }
     },
     "warning": {
       "title": "string",
